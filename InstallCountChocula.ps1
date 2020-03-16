@@ -4,15 +4,18 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 
 #Assign Packages to Install
 $Packages = 'googlechrome',`
-            'visualstudiocode',`
-            'git',`
-            'visualstudio2017community',`
-            'visualstudio2017-workload-azure',`
-            'visualstudio2017-workload-netweb'
+            'adoptopenjdk11jre',`
+            'notepadplusplus',`
+            'sql-server-2019',`
+            'netfx-4.7.2-devpack'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
+
+install-module -name AWSPowershell -Force
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
 
 #Reboot
 Restart-Computer

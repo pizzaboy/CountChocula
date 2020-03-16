@@ -6,27 +6,32 @@
       "type": "string",
       "defaultValue": "CountChoculadnsnameupdateme",
       "minLength": 1
+    },
+    "AdminPassword": {
+      "type": "string",
+      "defaultValue": "",
+      "minLength": 1
     }
   },
   "variables": {
-    "CountChoculaVNETPrefix": "192.168.0.0/24",
-    "CountChoculaVNETSubnet1Name": "CountChocula",
-    "CountChoculaVNETSubnet1Prefix": "192.168.0.0/24",
-    "CountChoculaName": "CountChocula",
-    "CountChoculaAdminUserName": "stormtrooperio",
-    "CountChoculaAdminPassword": "Password.1!!",
+    "CountChoculaVNETPrefix": "10.1.0.0/24",
+    "CountChoculaVNETSubnet1Name": "jenkinsslaves",
+    "CountChoculaVNETSubnet1Prefix": "10.1.0.0/24",
+    "CountChoculaName": "jenkinsslave1",
+    "CountChoculaAdminUserName": "jenkinsslave",
+    "CountChoculaAdminPassword": "[parameters('AdminPassword')]",
     "CountChoculaImagePublisher": "MicrosoftWindowsServer",
     "CountChoculaImageOffer": "WindowsServer",
-    "CountChoculaWindowsOSVersion": "2016-Datacenter",
+    "CountChoculaWindowsOSVersion": "2019-Datacenter",
     "CountChoculaOSDiskName": "[concat(variables('CountChoculaName'), '-OSDISK')]",
-    "CountChoculaVmSize": "Standard_D2s_v3",
-    "CountChoculaVnetID": "[resourceId('Microsoft.Network/virtualNetworks', 'CountChoculaVNET')]",
+    "CountChoculaVmSize": "Standard_DS2_v2",
+    "CountChoculaVnetID": "[resourceId('Microsoft.Network/virtualNetworks', 'jenkinsslaves-vnet')]",
     "CountChoculaSubnetRef": "[concat(variables('CountChoculaVnetID'), '/subnets/', variables('CountChoculaVNETSubnet1Name'))]",
     "CountChoculaNicName": "[concat(variables('CountChoculaName'), '-NIC')]",
     "CountChocula-PUBIPName": "[concat(variables('CountChoculaName'), '-PIP')]",
     "CountChoculaInstallHyperVScriptFolder": ".",
     "CountChoculaInstallHyperVScriptFileName": "InstallCountChocula.ps1",
-    "CountChoculaInstallHyperVURL": "https://raw.githubusercontent.com/deltadan/CountChocula/master/InstallCountChocula.ps1"
+    "CountChoculaInstallHyperVURL": "https://raw.githubusercontent.com/pizzaboy/CountChocula/master/InstallCountChocula.ps1"
   },
   "resources": [
     {
@@ -36,7 +41,7 @@
       "apiVersion": "2016-03-30",
       "dependsOn": [],
       "tags": {
-        "displayName": "CountChoculaVNET"
+        "displayName": "jenkinsslaves-vnet"
       },
       "properties": {
         "addressSpace": {
