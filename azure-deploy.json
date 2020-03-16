@@ -31,7 +31,7 @@
     "CountChocula-PUBIPName": "[concat(variables('CountChoculaName'), '-PIP')]",
     "CountChoculaInstallHyperVScriptFolder": ".",
     "CountChoculaInstallHyperVScriptFileName": "InstallCountChocula.ps1",
-    "CountChoculaInstallHyperVURL": "https://raw.githubusercontent.com/pizzaboy/CountChocula/master/InstallCountChocula.ps1"
+    "CountChoculaInstallHyperVURL": "https://raw.githubusercontent.com/pizzaboy/CountChocula/latestversion/InstallCountChocula.ps1"
   },
   "resources": [
     {
