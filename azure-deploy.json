@@ -71,7 +71,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('CountChoculaDnsName'),'.deltafs')]"
+          "domainNameLabel": "[concat(parameters('CountChoculaDnsName'),'-deltafs')]"
         }
       }
     },
