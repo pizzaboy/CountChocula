@@ -4,7 +4,7 @@
   "parameters": {
     "CountChoculaDnsName": {
       "type": "string",
-      "defaultValue": "CountChoculadnsnameupdateme",
+      "defaultValue": "ci-azure-XX",
       "minLength": 1
     },
     "AdminPassword": {
@@ -35,7 +35,7 @@
   },
   "resources": [
     {
-      "name": "CountChoculaVNET",
+      "name": "jenkinsslaves-vnet",
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[resourceGroup().location]",
       "apiVersion": "2016-03-30",
@@ -71,7 +71,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('CountChoculaDnsName')]"
+          "domainNameLabel": "[concat(parameters('CountChoculaDnsName'),'.deltafs')]"
         }
       }
     },
