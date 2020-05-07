@@ -24,7 +24,7 @@
     "CountChoculaImageOffer": "WindowsServer",
     "CountChoculaWindowsOSVersion": "2019-Datacenter",
     "CountChoculaOSDiskName": "[concat(variables('CountChoculaName'), '-OSDISK')]",
-    "CountChoculaVmSize": "Standard_DS2_v3",
+    "CountChoculaVmSize": "Standard_D2s_v3",
     "CountChoculaVnetID": "[resourceId('Microsoft.Network/virtualNetworks', 'jenkinsslaves-vnet')]",
     "CountChoculaSubnetRef": "[concat(variables('CountChoculaVnetID'), '/subnets/', variables('CountChoculaVNETSubnet1Name'))]",
     "CountChoculaNicName": "[concat(variables('CountChoculaName'), '-NIC')]",
