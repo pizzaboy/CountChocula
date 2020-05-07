@@ -3,8 +3,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 #Assign Packages to Install
-$Packages = 'sql-server-2019',`
-            'git',`
+# 'sql-server-2019',`   fails because the server requires a restart first
+$Packages = 'git',`
             'googlechrome',`
             'dotnetcore-sdk',`
             'dotnetcore-runtime',`
