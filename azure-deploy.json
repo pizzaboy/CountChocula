@@ -2,7 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "CountChoculaDnsName": {
+    "NodeName": {
       "type": "string",
       "defaultValue": "ci-azure-XX",
       "minLength": 1
@@ -17,14 +17,14 @@
     "CountChoculaVNETPrefix": "10.1.0.0/24",
     "CountChoculaVNETSubnet1Name": "jenkinsslaves",
     "CountChoculaVNETSubnet1Prefix": "10.1.0.0/24",
-    "CountChoculaName": "jenkinsslave1",
+    "CountChoculaName": "[parameters('NodeName')]",
     "CountChoculaAdminUserName": "jenkinsslave",
     "CountChoculaAdminPassword": "[parameters('AdminPassword')]",
     "CountChoculaImagePublisher": "MicrosoftWindowsServer",
     "CountChoculaImageOffer": "WindowsServer",
     "CountChoculaWindowsOSVersion": "2019-Datacenter",
     "CountChoculaOSDiskName": "[concat(variables('CountChoculaName'), '-OSDISK')]",
-    "CountChoculaVmSize": "Standard_DS2_v2",
+    "CountChoculaVmSize": "Standard_DS2_v3",
     "CountChoculaVnetID": "[resourceId('Microsoft.Network/virtualNetworks', 'jenkinsslaves-vnet')]",
     "CountChoculaSubnetRef": "[concat(variables('CountChoculaVnetID'), '/subnets/', variables('CountChoculaVNETSubnet1Name'))]",
     "CountChoculaNicName": "[concat(variables('CountChoculaName'), '-NIC')]",
@@ -71,7 +71,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('CountChoculaDnsName'),'-deltafs')]"
+          "domainNameLabel": "[concat(parameters('NodeName'),'-deltafs')]"
         }
       }
     },
