@@ -21,5 +21,10 @@ install-module -name AWSPowershell -Force -Scope AllUsers
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 
+$file = "$env:windir\System32\drivers\etc\hosts"
+"34.240.134.215 ci-master.internal.dev.deltafs.net" | Add-Content -PassThru $file
+"127.0.0.1 spa.acceptance.dev.platinum" | Add-Content -PassThru $file
+
+
 #Reboot
 Restart-Computer
