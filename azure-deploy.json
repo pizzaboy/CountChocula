@@ -4,7 +4,7 @@
   "parameters": {
     "NodeName": {
       "type": "string",
-      "defaultValue": "ci-azure-XX",
+      "defaultValue": "ci-azure-xx",
       "minLength": 1
     },
     "AdminPassword": {
@@ -71,7 +71,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('NodeName'),'-deltafs')]"
+          "domainNameLabel": "[concat(toLower(parameters('NodeName')),'-deltafs')]"
         }
       }
     },
