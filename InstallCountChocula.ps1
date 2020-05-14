@@ -18,7 +18,6 @@ ForEach ($PackageName in $Packages)
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 install-module -name AWSPowershell -Force -Scope AllUsers
-install-module -name sqlserver -Force -Scope AllUsers
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 
