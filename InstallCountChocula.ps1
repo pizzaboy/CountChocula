@@ -18,11 +18,17 @@ ForEach ($PackageName in $Packages)
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 install-module -name AWSPowershell -Force -Scope AllUsers
+install-module -name sqlserver -Force -Scope AllUsers
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET -All
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET45 -All
+
+
+
 $file = "$env:windir\System32\drivers\etc\hosts"
-"34.240.134.215 ci-master.internal.dev.deltafs.net" | Add-Content -PassThru $file
+"34.240.134.215 ci-master.internal.deltafs.net" | Add-Content -PassThru $file
 "127.0.0.1 spa.acceptance.dev.platinum" | Add-Content -PassThru $file
 
 
