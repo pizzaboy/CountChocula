@@ -21,8 +21,8 @@ install-module -name AWSPowershell -Force -Scope AllUsers
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET -All
-Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET45 -All
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET -All -norestart
+Enable-WindowsOptionalFeature -Online -FeatureName IIS-ASPNET45 -All -norestart
 
 
 
