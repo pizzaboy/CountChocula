@@ -133,7 +133,7 @@
           },
           "osDisk": {
             "createOption": "FromImage",
-            "diskSizeGB": 1023
+            "diskSizeGB": 150
           }
         },
         "networkProfile": {
