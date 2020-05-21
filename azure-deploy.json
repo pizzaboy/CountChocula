@@ -18,7 +18,7 @@
     "CountChoculaVNETSubnet1Name": "jenkinsslaves",
     "CountChoculaVNETSubnet1Prefix": "10.1.0.0/24",
     "CountChoculaName": "[parameters('NodeName')]",
-    "CountChoculaAdminUserName": "Administrator",
+    "CountChoculaAdminUserName": "jenkinsslave",
     "CountChoculaAdminPassword": "[parameters('AdminPassword')]",
     "CountChoculaImagePublisher": "MicrosoftWindowsServer",
     "CountChoculaImageOffer": "WindowsServer",
