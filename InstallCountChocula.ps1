@@ -6,6 +6,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 # 'sql-server-2019',`   fails because the server requires a restart first
 $Packages = 'git',`
             'googlechrome',`
+            'nodejs',`
             'dotnetcore-sdk',`
             'dotnetcore-runtime',`
             'adoptopenjdk11jre',`
