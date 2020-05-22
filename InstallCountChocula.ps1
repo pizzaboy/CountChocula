@@ -7,6 +7,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 $Packages = 'git',`
             'googlechrome',`
             'nodejs',`
+            'made2010',`
             'dotnetcore-sdk',`
             'dotnetcore-runtime',`
             'adoptopenjdk11jre',`
